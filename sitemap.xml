@@ -1,0 +1,17 @@
+<urlset xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://www.ifique.art/index.html</loc>
+        <lastmod>2023-02-19T10:04:01Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <news:news>
+          <news:publication>
+            <news:name>ifique</news:name>
+            <news:language>en</news:language>
+          </news:publication>
+          <news:genres></news:genres>
+          <news:publication_date>2023-02-19T10:00:05Z</news:publication_date>
+          <news:title>ifique</news:title>
+          <news:keywords>Ifique, Art, Photography, Performance Art, Hide</news:keywords>
+        </news:news>
+      </url>
+</urlset>
