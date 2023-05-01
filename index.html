@@ -11,14 +11,45 @@
               font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
               vertical-align: middle;
             }
-            </style>
+        </style>
+        <script>
+            window.onload = function(event) {
+                var langFull = navigator.language || navigator.userLanguage || "en";
+                console.log(langFull);
+                var lang = langFull.substring(0, 2).toLowerCase();
+                console.log(lang);
+                changeLanguage(lang)
 
+            };
+            function changeLanguage(lang) {
+                if (lang == "fr") {
+                    document.getElementById("fr").style.display = 'block';
+                    document.getElementById("en").style.display = 'none';
+                }
+                else {
+                    document.getElementById("en").style.display = 'block';
+                    document.getElementById("fr").style.display = 'none';
+                }
+            }
+
+        </script>
     </head>
     <body>
 
         <div class="content">
-            <p>Did you find something?</p>
-            <p>Tell <a href="mailto:contact@ifique.art">us</a> <a rel="me" href="https://mastodon.art/@ifique">about</a> it.</p>
+            <div id="fr">
+                <p>Avez-vous trouvé quelque chose?</p>
+                <p>Parlez-<a href="mailto:contact@ifique.art">nous</a>-<a rel="me" href="https://mastodon.art/@ifique">en</a>.</p>
+            </div>
+
+            <div id="en">
+                <p>Did you find something?</p>
+                <p>Tell <a href="mailto:contact@ifique.art">us</a> <a rel="me" href="https://mastodon.art/@ifique">about</a> it.</p>
+            </div>
+            <p>
+                <a href="#" onclick="changeLanguage('fr')">fr</a> |
+                <a href="#" onclick="changeLanguage('en')">en</a>
+            </p>
         </div>
 
     </body>
