@@ -13,14 +13,24 @@
             }
         </style>
         <script>
-            window.onload = function(event) {
-                var langFull = navigator.language || navigator.userLanguage || "en";
-                console.log(langFull);
-                var lang = langFull.substring(0, 2).toLowerCase();
-                console.log(lang);
-                changeLanguage(lang)
 
+            window.onload = function(event) {
+                var langFull = getQueryStringLang() || navigator.language || navigator.userLanguage || "en";
+
+                var lang = langFull.substring(0, 2).toLowerCase();
+
+                changeLanguage(lang)
             };
+
+            function getQueryStringLang()
+            {
+                const params = new Proxy(new URLSearchParams(window.location.search), {
+                    get: (searchParams, prop) => searchParams.get(prop),
+                });
+
+                return params.lang;
+            }
+
             function changeLanguage(lang) {
                 if (lang == "fr") {
                     document.getElementById("fr").style.display = 'block';
